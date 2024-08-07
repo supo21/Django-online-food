@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block start %}
+{% if request.user.is_superuser %}
+<div class="container mt-5">
+
+    <form class="col-6 mx-auto card p-3 shadow lg" method="post", enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Add Item</h2>
+        <hr>
+        
+        <div class="mb-3">
+          <label for="item_name" class="form-label">Item Name</label>
+          <input name="item_name" required type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Item Description</label>
+          <textarea name= "description" required class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="category">Item Category</label>
+            
+            <select name="category" id="category">
+            <option value="Veg">Veg</option>
+            <option value="Non-Veg">Non-Veg</option>
+            </select>
+          </div><br><br>
+        <div class="mb-3">
+          <label for="price" class="form-label">Item Price</label>
+          <input name="price" required type="number" class="form-control">
+          
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Item Image</label>
+            <input name= "image" type="file" class="form-control">
+          </div>
+        <button type="submit" class="btn btn-success">Add Item</button>
+      </form>
+{% else %}
+<h1>You do not have the permission to add recipes.</h1>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block start %}
+
+<div class="container mt-5">
+    <h2 class="mt-5">Featured Items</h2>
+    <div class="row">
+        {% for item in featured_items %}
+            <div class="col-md-3">
+                <div class="card shadow-lg" style="width: 18rem">
+                    <img src="{{ item.image.url }}" style="height : 300px;" class="card-img-top">
+                    <div class="card-body">
+                        <h5>{{ item.item_name }}</h5>
+                        <p>Price = {{item.price}} | Category = {{item.category}}</p>
+                        <a href="{% url 'add_cart' item.uid %}" class="btn btn-success">Cart<i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="#" class="btn btn-primary">20% discount</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div id="about" class="container my-5">
+    <h2 class="text-center mb-4">About Us</h2>
+    <h5 class="text-center">You can find the recipe of some of the delicious food. The recipes provided are easy to follow. You can find recipes from many places such as Nepali, Indian, and many more.</h5>
+</div>
+
+<!-- Contact Section -->
+  <div id="contact" section class="container my-5">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <h5 class="text-center">Email: digitalrecipe@gmail.com</h5>
+            <h5 class="text-center">Phone:061******, 98********</h5>
+        </section>
+
+<div id="reviews" class="container my-5">
+    <h2 class="text-center mb-4">Reviews</h2>
+    <div class="row">
+        <!-- Example Review -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ankit Tiwari</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">★★★★★</h6>
+                    <p class="card-text">Although I specifically  like to eat diet food. I discovered how simple and delicious the food recipes are there in this website.Amazing recipes! I've tried a few and they turned out great.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Example Review -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Suyesh Poudel</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">★★★★★</h6>
+                    <p class="card-text">I started making new dishes by the help of the recipe available.Love the variety and the easy-to-follow instructions.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Example Review -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sandesh Dhakal</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">★★★★★</h6>
+                    <p class="card-text">I only used to eat fried Potatoes made by my mother but after finding recipes from this website i started preparing and and trying many dishes. Great website for finding new recipes to try. Highly recommended!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+       
+{% endblock %}

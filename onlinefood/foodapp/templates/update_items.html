@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block start %}
+
+
+
+<div class="container mt-5">
+
+    <form class="col-6 mx-auto card p-3 shadow lg" method="post", enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Update Item</h2>
+        <hr>
+        <div class="mb-3">
+          <label for="item_name" class="form-label">Item Name</label>
+          <input name="item_name" value = "{{item.item_name}}" required type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea name= "description" required class="form-control">{{item.description}}</textarea>
+        </div>
+        <div class="mb-3">
+          <label for="category">Item Category</label>
+
+          <select name="item" id="item" value ='{{item.category}}'>
+          <option value="Veg">Veg</option>
+          <option value="Non-Veg">Non-Veg</option>
+          </select>
+        </div>
+        <div class="mb-3">
+            <label for="Price" class="form-label">Price</label>
+            <input name="Price" value = "{{item.price}}" required type="number" class="form-control">
+          </div>
+        <div class="mb-3">
+            <label for="recipe_image" class="form-label">Item Image</label>
+            <input name= "recipe_image" type="file" class="form-control">
+          </div>
+        <button type="submit" class="btn btn-success">Update Item</button>
+      </form>
+
+</div>
+
+{% endblock %}
