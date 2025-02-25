@@ -1,6 +1,8 @@
 # Django Online Food
 This project is a simple online food ordering app built using Django.
 
+![Home](https://github.com/supo21/Django-online-food/blob/main/onlinefood/public/static/screenshots/home.png)
+
 # Requirements
 Ensure the following are installed on your computer:
 1. Python 3.8+
