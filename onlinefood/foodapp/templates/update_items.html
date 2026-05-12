@@ -20,7 +20,7 @@
         <div class="mb-3">
           <label for="category">Item Category</label>
 
-          <select name="item" id="item" value ='{{item.category}}'>
+          <select name="category" id="category" value ='{{item.category}}'>
           <option value="Veg">Veg</option>
           <option value="Non-Veg">Non-Veg</option>
           </select>
@@ -30,8 +30,8 @@
             <input name="price" value = "{{item.price}}" required type="number" class="form-control">
           </div>
         <div class="mb-3">
-            <label for="recipe_image" class="form-label">Item Image</label>
-            <input name= "recipe_image" type="file" class="form-control">
+            <label for="image" class="form-label">Item Image</label>
+            <input name= "image" type="file" class="form-control">
           </div>
         <button type="submit" class="btn btn-success">Update Item</button>
       </form>
