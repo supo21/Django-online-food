@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: django-online-food
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn onlinefood.wsgi:application"
